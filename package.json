@@ -1,5 +1,5 @@
 {
-  "name": "@beukay/learn",
+  "name": "beukay_learn",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "@beukay/learn": "bin/start.js"
+    "beukay_learn": "bin/start.js"
   },
   "keywords": [],
   "author": "zzcan",
