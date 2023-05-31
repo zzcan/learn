@@ -2,5 +2,4 @@
 
 const args = require('yargs-parser')(process.argv.slice(2));
 
-
-require('../src').start(args)
+require('..').start(args)
