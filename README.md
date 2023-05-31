@@ -2,5 +2,10 @@
 
 ```bash
 # 随便找个请求拿一下 token
-npx beukay-learn --token xxxxxxxxx
+
+# 方法1
+npx beukay_learn --token xxxxxxxxx
+
+# 方法2
+curl -sSL https://raw.githubusercontent.com/zzcan/learn/master/start.sh | sh
 ```
