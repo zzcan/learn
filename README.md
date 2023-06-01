@@ -1,11 +1,13 @@
-# 自动完成个人中心里未完成的学习任务
+# 自动完成课程学习
 
+## 个人中心里未完成的学习任务
 ```bash
 # 随便找个请求拿一下 token
-
-# 方法1
+# terminal 里执行该脚本
 npx beukay_learn --token xxxxxxxxx
+```
 
-# 方法2
-curl -sSL https://raw.githubusercontent.com/zzcan/learn/master/start.sh | sh
+## 个人中心里未完成的学习项目
+```bash
+npx beukay_learn --token xxxxxxxxx --project
 ```

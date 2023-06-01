@@ -2,4 +2,8 @@
 
 const args = require('yargs-parser')(process.argv.slice(2));
 
-require('..').start(args)
+if(args.project) {
+  require('..').startProject(args)
+} else {
+  require('..').start(args)
+}

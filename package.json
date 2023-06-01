@@ -1,6 +1,6 @@
 {
   "name": "beukay_learn",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "files": [
@@ -8,7 +8,7 @@
     "start.sh"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./bin/start.js"
   },
   "bin": {
     "beukay_learn": "bin/start.js"
