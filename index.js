@@ -98,6 +98,11 @@ const start = async (args) => {
     const data = await taskRes.json();
     const taskIdList = (data ? (data.list || []) : []).map(item => item.id);
 
+    if(!taskIdList.length) {
+      console.log(chalk.red('您没有未完成的学习任务！'))
+      return;
+    }
+
     for(let i = 0; i < taskIdList.length; i++) {
       const courseRes = await fetch(
         `https://coolapi.coolcollege.cn/training-manage-api/plan/myTask/getOne?id=${taskIdList[i]}`, 
@@ -193,6 +198,11 @@ const startProject = async (args) => {
     );
     const data = await taskRes.json();
     const taskIdList = (data && data.data ? (data.data.list || []) : []).map(item => item.id);
+
+    if(!taskIdList.length) {
+      console.log(chalk.red('您没有未学习的项目！'))
+      return;
+    }
 
     for(let i = 0; i < taskIdList.length; i++) {
       const projectId = taskIdList[i];
