@@ -196,6 +196,21 @@ const startProject = async (args) => {
 
     for(let i = 0; i < taskIdList.length; i++) {
       const projectId = taskIdList[i];
+
+      try {
+        await fetch(
+          `https://coolapi.coolcollege.cn/training-manage-api/v2/${ENTERPRISE_ID}/users/${userInfo.id}/study_projects/${projectId}/start_study_fast`, 
+          {
+            headers,
+            body: JSON.stringify({
+              app_type: "",
+              access_token: token,
+            }),
+            "method": "POST"
+          }
+        );
+      } catch (error) {}
+
       const courseRes = await fetch(
         `https://coolapi.coolcollege.cn/training-manage-api/v2/${ENTERPRISE_ID}/users/${userInfo.id}/study_projects/${projectId}/query_fast?app_type=`, 
         {
@@ -222,7 +237,7 @@ const startProject = async (args) => {
       }
       
       for(let j = 0; j < courseList.length; j++) {
-        const { course_id, resource_name, title } = courseList[j];
+        const { course_id, resource_name } = courseList[j];
 
         const progressRes = await fetch(
           `https://waf-coolapi.coolcollege.cn/training-manage-api/v2/${ENTERPRISE_ID}/users/${userInfo.id}/study_projects/${projectId}/courses/${course_id}/resources/${course_id}/save_progress`, 
